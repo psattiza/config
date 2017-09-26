@@ -1,0 +1,67 @@
+[user]
+	email = psattiza@mines.edu
+	name = Paul Sattizahn
+[github]
+	user = psattiza
+	token = 642231510a40a313e23a98bf4bbcfe89b96f917a
+[push]
+	default = simple
+[url "https://psattiza@github.com"]
+	insteadOf = gh
+[alias]
+	a = add --all
+	ai = add -i
+	#############
+	b = branch
+	#############
+	c = commit
+	ca = commit -a
+	cm = commit -m
+	cam = commit -am
+	cd = commit --amend
+	cad = commit -a --amend
+	ced = commit --allow-empty --amend
+	#############
+	d = diff
+	#############
+	f = fetch
+	fo = fetch origin
+	fu = fetch upstream
+	#############
+	fp = format-patch
+	#############
+	fk = fsck
+	#############
+	g = grep -p
+	#############
+	l = log --oneline
+	#lg = log --oneline --graph --decorate
+	lg1 = log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all
+	lg2 = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --all
+	lg = !"git lg1"
+	#############
+	ls = ls-files
+	lsf = "!git ls-files | grep -i"
+	#############
+	m = merge
+	ma = merge --abort
+	mc = merge --continue
+	ms = merge --skip
+	#############
+	rr = remote rm
+	rv = remote -v
+	#############
+	s = status
+	sb = status -s -b
+	#############
+	sa = stash apply
+	sc = stash clear
+	sd = stash drop
+	sl = stash list
+	sp = stash pop
+	ss = stash save
+	sw = stash show
+	#############
+	whois = "!sh -c 'git log -i -1 --pretty=\"format:%an <%ae>\n\" --author=\"$1\"' -"
+	serve = !git daemon --reuseaddr --verbose  --base-path=. --export-all ./.git
+	alias = config --get-regexp ^alias\\.
