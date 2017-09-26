@@ -150,3 +150,4 @@ export LESS="-erX"
 function linkHome(){
 	ln -s config/$1 ~/$1
 }
+eval $(thefuck --alias)

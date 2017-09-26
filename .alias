@@ -2,5 +2,6 @@ alias 'cd..'="cd .."
 alias 'null'='/dev/null  &'
 alias -g no='2> /dev/null > /dev/null &'
 alias g="git"
-
+alias ..="cd .."
+alias cd..="cd .."
 
