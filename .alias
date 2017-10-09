@@ -4,4 +4,6 @@ alias -g no='2> /dev/null > /dev/null &'
 alias g="git"
 alias ..="cd .."
 alias cd..="cd .."
-
+alias top="htop"
+alias alpr="ssh isengard lpr -P bb136-printer"
+alias speed="speedtest"

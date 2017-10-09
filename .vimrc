@@ -35,4 +35,20 @@ function! Clean()
     call winrestview(winview)
     %s/\s\+$//e
 endfunction
-command! -nargs=0 Clean :call Clean()
+
+
+execute pathogen#infect()
+syntax on
+filetype plugin indent on
+:set colorcolumn=+1        " highlight column after 'textwidth'
+:set colorcolumn=+1  " highlight three columns after 'textwidth'
+:highlight ColorColumn ctermbg=lightgrey guibg=lightgrey
+
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0

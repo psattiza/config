@@ -151,3 +151,4 @@ function linkHome(){
 	ln -s config/$1 ~/$1
 }
 eval $(thefuck --alias)
+source ~/.alias
