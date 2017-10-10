@@ -70,3 +70,7 @@ omap / <Plug>(easymotion-tn)
 " different highlight method and have some other features )
 map  n <Plug>(easymotion-next)
 map  N <Plug>(easymotion-prev)
+
+let g:indent_guides_enable_on_vim_startup = 1
+
+let g:syntastic_python_python_exec = '/usr/bin/python3'
