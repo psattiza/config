@@ -38,6 +38,7 @@ endfunction
 
 
 execute pathogen#infect()
+execute pathogen#helptags()
 syntax on
 filetype plugin indent on
 :set colorcolumn=+1        " highlight column after 'textwidth'
@@ -52,3 +53,8 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+
+
+map <C-n> :NERDTreeToggle<CR>
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
