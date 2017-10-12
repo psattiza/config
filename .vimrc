@@ -1,53 +1,31 @@
-" show existing tab with 4 spaces width
-set tabstop=4
-" when indenting with '>', use 4 spaces width
-set shiftwidth=4
-" On pressing tab, insert 4 spaces
-set expandtab
-" Allow saving of files as sudo when I forgot to start vim using sudo.
-cmap w!! w !sudo tee > /dev/null %
+set nocompatible              " be iMproved, required
+filetype off                  " required
 
-set number
-highlight LineNr ctermfg=yellow
-set diffopt+=iwhite
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+" alternatively, pass a path where Vundle should install plugins
+"call vundle#begin('~/some/path/here')
 
-if &diff
-    colorscheme ron
-endif
-
-autocmd Filetype ruby setlocal ts=2 sts=2 sw=2
-autocmd Filetype python setlocal ts=4 sts=4 sw=4
-autocmd Filetype c setlocal ts=4 sts=4 sw=4
-autocmd Filetype c++ setlocal ts=4 sts=4 sw=4
-
-:command W w
-:command Q q
-:command Wq wq
-:command WQ wq
-
-:command SpellOn setlocal spell spelllang=en_us
-:command SpellOff setlocal nospell
-
-function! Clean()
-    retab
-    let winview = winsaveview()
-    normal gg=G
-    call winrestview(winview)
-    %s/\s\+$//e
-endfunction
+" let Vundle manage Vundle, required
+Plugin 'airblade/vim-gitgutter'
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'ervandew/supertab'
+Plugin 'easymotion/vim-easymotion'
+Plugin 'lervag/vimtex'
+Plugin 'python-mode/python-mode'
+Plugin 'Raimondi/delimitMate'
+Plugin 'scrooloose/nerdtree'
+Plugin 'Valloric/YouCompleteMe'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+Plugin 'vim-syntastic/syntastic'
+Plugin 'VundleVim/Vundle.vim'
 
 
-execute pathogen#infect()
-execute pathogen#helptags()
-syntax on
-filetype plugin indent on
-:set colorcolumn=+1        " highlight column after 'textwidth'
-:set colorcolumn=+1  " highlight three columns after 'textwidth'
-:highlight ColorColumn ctermbg=lightgrey guibg=lightgrey
+Plugin 'l04m33/vlime', {'rtp': 'vim/'}
 
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
+call vundle#end()            " required
 
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
@@ -74,3 +52,65 @@ map  N <Plug>(easymotion-prev)
 let g:indent_guides_enable_on_vim_startup = 1
 
 let g:syntastic_python_python_exec = '/usr/bin/python3'
+filetype plugin indent on    " required
+" To ignore plugin indent changes, instead use:
+"filetype plugin on
+"
+" Brief help
+" :PluginList       - lists configured plugins
+" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
+" :PluginSearch foo - searches for foo; append `!` to refresh local cache
+" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
+"
+" see :h vundle for more details or wiki for FAQ
+" Put your non-Plugin stuff after this line
+
+
+" show existing tab with 4 spaces width
+set tabstop=4
+" when indenting with '>', use 4 spaces width
+set shiftwidth=4
+" On pressing tab, insert 4 spaces
+set expandtab
+" Allow saving of files as sudo when I forgot to start vim using sudo.
+cmap w!! w !sudo tee > /dev/null %
+
+set number
+highlight LineNr ctermfg=yellow
+set diffopt+=iwhite
+
+syntax enable
+set background=dark
+colorscheme ron
+
+autocmd Filetype ruby setlocal ts=2 sts=2 sw=2
+autocmd Filetype python setlocal ts=4 sts=4 sw=4
+autocmd Filetype c setlocal ts=4 sts=4 sw=4
+autocmd Filetype c++ setlocal ts=4 sts=4 sw=4
+
+:command W w
+:command Q q
+:command Wq wq
+:command WQ wq
+
+:command SpellOn setlocal spell spelllang=en_us
+:command SpellOff setlocal nospell
+
+function! Clean()
+    retab
+    let winview = winsaveview()
+    normal gg=G
+    call winrestview(winview)
+    %s/\s\+$//e
+endfunction
+
+
+syntax on
+:set colorcolumn=+1        " highlight column after 'textwidth'
+:set colorcolumn=+1  " highlight three columns after 'textwidth'
+:highlight ColorColumn ctermbg=lightgrey guibg=lightgrey
+
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
