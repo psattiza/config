@@ -24,6 +24,7 @@ Plugin 'VundleVim/Vundle.vim'
 
 
 Plugin 'l04m33/vlime', {'rtp': 'vim/'}
+Plugin 'rustushki/JavaImp.vim'
 
 call vundle#end()            " required
 
