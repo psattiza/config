@@ -65,3 +65,5 @@
 	whois = "!sh -c 'git log -i -1 --pretty=\"format:%an <%ae>\n\" --author=\"$1\"' -"
 	serve = !git daemon --reuseaddr --verbose  --base-path=. --export-all ./.git
 	alias = config --get-regexp ^alias\\.
+[core]
+	excludesfile = /home/paul/.gitignore
