@@ -155,5 +155,4 @@ eval $(thefuck --alias)
 alias f="fuck"
 
 
-export PYTHONPATH="/home/paul/.smt_solvers/python-bindings-3.5:${PYTHONPATH}"
-export PYTHONPATH="/home/paul/.smt_solvers/python-bindings-3.5:${PYTHONPATH}"
+source ~/.iterm2_shell_integration.zsh

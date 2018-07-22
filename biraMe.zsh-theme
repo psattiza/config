@@ -28,4 +28,4 @@ RPS1="%B${return_code}%b"
 ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg[yellow]%}‹"
 ZSH_THEME_GIT_PROMPT_SUFFIX="› %{$reset_color%}"
 
-RPROMPT="[%D{%y/%m/%f}|%*]"
+RPROMPT="[%D{%m/%f} %*]"
