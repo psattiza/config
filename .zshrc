@@ -1,6 +1,8 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
-
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/zulujdk_8_21_0_2/
+export PATH="${JAVA_HOME}/bin:${PATH}"
+export PATH=${PATH}:~/bin
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 
@@ -56,12 +58,11 @@ ZSH_THEME="biraMe"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git vi-mode jsontools wd colored-man-pages colorize)
+plugins=(git vi-mode jsontools wd colored-man-pages colorize docker gradle cp brew)
 
 source $ZSH/oh-my-zsh.sh
 # User configuration
 
-# export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
@@ -160,3 +161,49 @@ alias f="fuck"
 
 
 source ~/.iterm2_shell_integration.zsh
+
+
+
+
+# Runs the start script, accepts arguments such as worksheets
+# Example: `start worksheets`
+alias start='cd ~/code/web-resources && git checkout master && git pull && ./start.sh'
+
+# Get your computer's IP address
+alias get:ip='ipconfig getifaddr en0 || ipconfig getifaddr en5'
+
+# Copy your computer's IP address
+alias copy:ip='echo -n $(get:ip) | pbcopy'
+
+# Get the url to run your client in a VM
+alias copy:ie='echo -n http://$(get:ip):9000 | pbcopy'
+
+# Get the url to access mock writeback tables for local development
+alias copy:writeback='echo -n http://$(get:ip):7777/wday/gcw/rest/mocks/tables | pbcopy'
+
+# Create a workbook without having to run the Drive client locally
+alias create:workbook='cd ~/code/cban-web-client/test/functional; SEL_URL=http://$(get:ip):9000 ./gradlew createWorkbook; cd ~/code/cban-web-client'
+
+# Open IntelliJ from the command line and sets SEL_URL
+alias idea='~/code/web-resources/scripts/launch-intellij.sh'
+
+# Open Screen Sharing with the correct port to watch Selenium tests
+alias vnc='~/code/cban-web-client/test/functional/start_grid.sh -v'
+
+
+
+
+autoload -U up-line-or-beginning-search
+autoload -U down-line-or-beginning-search
+zle -N up-line-or-beginning-search
+zle -N down-line-or-beginning-search
+bindkey "^[[A" up-line-or-beginning-search # Up
+bindkey "^[[B" down-line-or-beginning-search # Down
+
+
+
+
+export DOCKER_IP=$(ipconfig getifaddr en0)
+export SEL_URL="http://${DOCKER_IP}:8000"
+export SEL_WORKDAY_USER='root'
+export SEL_WORKDAY_PASS=''

@@ -19,6 +19,7 @@ Plugin 'Valloric/YouCompleteMe'
 Plugin 'vim-syntastic/syntastic'
 Plugin 'VundleVim/Vundle.vim'
 
+Plugin 'editorconfig/editorconfig-vim'
 
 Plugin 'l04m33/vlime', {'rtp': 'vim/'}
 Plugin 'rustushki/JavaImp.vim'
@@ -73,7 +74,7 @@ set shiftwidth=4
 " On pressing tab, insert 4 spaces
 set expandtab
 " Allow saving of files as sudo when I forgot to start vim using sudo.
-cmap w!! w !sudo tee > /dev/null %
+cmap w!! w !sudo /usr/bin/tee > /dev/null %
 
 set number
 highlight LineNr ctermfg=yellow

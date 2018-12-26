@@ -1,0 +1,10 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =8
+let g:netrw_dirhist_1='/Users/paul.sattizahn'
+let g:netrw_dirhist_2='/Users/paul.sattizahn/.oh-my-zsh'
+let g:netrw_dirhist_3='/Users/paul.sattizahn/.oh-my-zsh/templates'
+let g:netrw_dirhist_4='/Users/paul.sattizahn/.oh-my-zsh'
+let g:netrw_dirhist_5='/Users/paul.sattizahn/.oh-my-zsh/plugins'
+let g:netrw_dirhist_6='/Users/paul.sattizahn/.oh-my-zsh/plugins/vim-interaction'
+let g:netrw_dirhist_7='/Users/paul.sattizahn/.oh-my-zsh/plugins'
+let g:netrw_dirhist_8='/Users/paul.sattizahn/.oh-my-zsh/plugins/vi-mode'

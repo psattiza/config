@@ -1,13 +1,6 @@
 [user]
-	email = psattiza@mines.edu
+	email = paul.sattizahn@workday.com
 	name = Paul Sattizahn
-[github]
-	user = psattiza
-	token = 642231510a40a313e23a98bf4bbcfe89b96f917a
-[push]
-	default = simple
-[url "https://psattiza@github.com"]
-	insteadOf = gh
 [alias]
 	a = add --all
 	ai = add -i
@@ -22,7 +15,7 @@
 	cad = commit -a --amend
 	ced = commit --allow-empty --amend
 	#############
-	d = diff
+	d = difftool
 	#############
 	f = fetch
 	fo = fetch origin
@@ -66,4 +59,30 @@
 	serve = !git daemon --reuseaddr --verbose  --base-path=. --export-all ./.git
 	alias = config --get-regexp ^alias\\.
 [core]
-	excludesfile = /home/paul/.gitignore
+	excludesfile = /Users/paul.sattizahn/.gitignore_global
+	autocrlf = input
+	pager = less -x1,5
+[branch]
+	autosetuprebase = never
+[push]
+	default = tracking
+[credential]
+	helper = osxkeychain
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+[diff]
+	tool = vimdiff
+[difftool]
+	prompt = false
+[difftool "vimdiff"]
+	cmd = vimdiff \"$LOCAL\" \"$REMOTE\"
+[merge]
+	tool = kdiff3
+[mergetool "kdiff3"]
+	path = /Applications/kdiff3.app/Contents/MacOS/kdiff3
+[commit]
+	template = /Users/paul.sattizahn/.stCommitMsg
