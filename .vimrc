@@ -88,6 +88,7 @@ autocmd Filetype ruby setlocal ts=2 sts=2 sw=2
 autocmd Filetype python setlocal ts=4 sts=4 sw=4
 autocmd Filetype c setlocal ts=4 sts=4 sw=4
 autocmd Filetype c++ setlocal ts=4 sts=4 sw=4
+autocmd Filetype java setlocal ts=4 sts=4 sw=4
 
 :command W w
 :command Q q
@@ -115,3 +116,5 @@ set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
+vnoremap > >gv
+vnoremap < <gv
